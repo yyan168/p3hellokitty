@@ -3,6 +3,8 @@ let pageNum = 1
 let IMAGE_FLIPPHONE = null
 let IMAGE_WAVE = null
 
+let firstClick = false;
+
 
 function preload() {
   IMAGE_FLIPPHONE = loadImage('assets/flipphone.png')
@@ -60,6 +62,11 @@ function drawScene() {
 
 
 function mouseClicked() {
+  
+  if (firstClick === false) {
+    firstClick = true;
+    playBgAudio();
+  }
   pageNum++
   if (pageNum == 5) {
     pageNum = 1
